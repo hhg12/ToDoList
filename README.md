@@ -15,7 +15,7 @@ cd ToDoList
 ```
 Install dependency
 ```
-npm i
+npm install
 ```
 Run webpack
 ```
