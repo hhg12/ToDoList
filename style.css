@@ -1,0 +1,187 @@
+
+body,ul {
+  margin: 0;
+  padding: 0;
+}
+#signInAndSignUp {
+  height: 300px;
+  background-color: #00b38a;
+  padding-top: 1px;
+}
+#signInAndSignUp div.subject {
+  color: #fff;
+  text-align: center;
+  margin-top: 110px;
+  font-size: 33px;
+}
+#signInAndSignUp .mainContent {
+  width: 290px;
+  padding: 10px 20px;
+  background-color: #fff; 
+  margin: 40px auto;
+  border: 1px solid #00b38a;
+}
+.clearfix::after {
+  display: block;
+  content: '';
+  clear: both;
+}
+#signInAndSignUp .head {
+  list-style: none;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #ccc;
+}
+#signInAndSignUp .head>li {
+  float: left;
+  font-size: 16px;
+  width: 50%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 5px;
+  cursor: pointer;
+  color: #ccc;
+}
+#signInAndSignUp .head>li.active {
+  color: #00b38a;
+}
+#signInAndSignUp .formRow input {
+  width: 100%;
+  height: 44px;
+  margin-bottom: 14px;
+  border-style: none;
+  border-bottom: 1px solid #ccc;   
+  outline: 0;
+}
+#signInAndSignUp .formRow input::-webkit-input-placeholder {
+  color: #ccc;
+}
+#signInAndSignUp .formActions input {
+  display: inline-block;
+  width: 100%;
+  height: 44px;
+  background-color: #00b38a; 
+  color: #fff;
+  border-style: none;
+  border-radius: 3px;
+  font-size: 16px;
+  letter-spacing: 5px;
+}
+/* -----------------------leftcontent---------------------------- */
+/* #app{
+  margin: auto;
+  text-align: justify;
+} */
+#todo .leftContent {
+  height: 100vh;
+  width: 20%;
+  background-color: #00b38a;
+  color: #fff;
+  float: left;
+}
+#todo .subject {
+  color: #fff;
+  text-align: center;
+  font-size: 33px;
+  padding: 20px 0;
+}
+#todo div.theme {
+  font-size: 22px;
+}
+#todo .theme,.leftContent li {
+  font-size: 18px;
+  padding: 10px 36px;
+}
+#todo .leftContent li{
+  cursor: pointer;    
+}
+/*----------- ------------------  */
+#todo .todoContent div>input{
+  box-sizing: border-box;
+  width:300px;
+  height:50px;
+  font-size: 18px;
+  border-radius: 3px;
+  border-width: 1px;
+}
+#todo .todoContent {
+  box-sizing: border-box;
+  width: 80%;
+  float: right;
+  padding: 20px 45px;
+} 
+#todo .todoContent>div {
+  margin-bottom: 20px;
+}
+#todo .todoContent .btn {
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+#todo .todoContent span.add {
+  background: #5CC853;
+}
+#todo .todoContent span.empty {
+  background: #B72712;
+}
+#todo .todoContent .user {
+  height: 50px;
+  line-height: 50px;
+  float: right;
+  font-size: 14px;
+}
+#todo .todoContent .user button {
+  padding: 10px;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-left: 10px;
+}
+#todo .todoContent .user button:hover {
+  background: #ccc;
+  transition: all 0.5s;
+}
+#todo ol.todos {
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#todo ol.todos li {
+  box-sizing: border-box;
+  padding: 0 20px;
+  border-bottom: 1px solid #ccc; 
+  height: 50px;
+  line-height: 50px;
+  cursor: pointer;
+}
+#todo ol.todos li.done {
+  background: #eee;
+  text-decoration: line-through;
+  color: #ccc;
+}
+#todo ol.todos li:last-child {
+  border: none;
+}
+#todo ol.todos li .date-delete {
+  float: right;
+  height: 50px;
+}
+#todo ol.todos li .date-delete .creatTime{
+  font-size: 10px;
+  color: #ccc;
+} 
+#todo ol.todos li .date-delete button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  background: #FFDA44;
+  border-radius: 3px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+#todo ol.todos li .date-delete button:hover {
+  background: #ccc;
+}
+

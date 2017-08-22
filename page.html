@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+  </head>
+  <body>
+    <div id="app">
+      <section id="signInAndSignUp" v-if="!currentUser">
+        <div class="subject">ToDoList</div>
+        <div class="mainContent">
+          <ul class="head clearfix">
+          <li v-on:click="actionType='signUp'" v-bind:class={active:actionType=='signUp'}>注册</li>
+          <li v-on:click="actionType='logIn'" v-bind:class={active:actionType=='logIn'}>登录</li>
+          </ul>
+          <div class="signUp" v-if="actionType=='signUp'">
+            <form @submit.prevent=signUp>
+              <div class="formRow">
+                <input type="text" v-model="formData.username" placeholder="请输入用户名">
+              </div>
+              <div class="formRow">
+                <input type="password" v-model="formData.password" placeholder="请输入密码">
+              </div>
+              <div class="formActions">
+                <input type="submit" value="注册">
+              </div>
+            </form>
+          </div>
+          <div class="login" v-if="actionType=='logIn'">
+            <form @submit.prevent=login>
+              <div class="formRow">
+                <input type="text" v-model="formData.username" placeholder="请输入用户名">
+              </div>
+              <div class="formRow">
+                <input type="password" v-model="formData.password" placeholder="请输入密码">
+              </div>
+              <div class="formActions">
+                <input type="submit" value="登录">
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="todo" class=" clearfix" v-if="currentUser">
+        <div class="leftContent">
+          <div class="subject">ToDoList</div>
+          <div class="theme">筛选</div>
+          <ul class="">
+            <li @click="showToDo='all'">全部</li>
+            <li @click="showToDo='false'">待办</li>
+            <li @click="showToDo='true'">已完成</li>
+          </ul>
+        </div>
+        <div class="todoContent"> 
+          <div>
+            <input type="text" v-model="newTodo" @keypress.enter="addTodo" placeholder="请输入待办事件">
+            <span class="btn add" v-on:click="addTodo">添加事件</span>
+            <span class="btn empty" @click='clearAll'>清空事件</span>
+            <div class="user">
+              <span> 你好，{{currentUser.username}} </span>
+              <button @click="logOut">登出</button>
+            </div>
+          </div>
+
+          <ol class="todos">
+            <li v-for="todo in todoList" @click="toggleDone(todo)" :class={done:todo.done} v-if="isShow(todo)">
+              <!-- <input type="checkbox" v-model="todo.done">  -->
+              <span>{{ todo.title }}</span>
+              
+              <div class="date-delete">
+                <span class="creatTime"><i>{{'创建于：'+todo.createdAt}}</i></span>
+                <button @click.stop="removeTodo(todo)" class="iconfont icon-delete8e"></button>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+    </div>
+
+     <script src="bundle.js"></script> 
+  </body>
+</html>
