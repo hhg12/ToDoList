@@ -1,10 +1,10 @@
 # ToDoList
 
 [Demo](https://hhg12.github.io/ToDoList/page.html)
-##Screenshot
+## Screenshot
 ![](https://hhg12.github.io/ToDoList/screenshot.jpg)
 
-##Loacl launch
+## Loacl launch
 Clone git repository
 ```
 git clone git@github.com:hhg12/ToDoList.git
